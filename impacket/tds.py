@@ -511,8 +511,8 @@ class MSSQL:
     def preLogin(self):
         prelogin = TDS_PRELOGIN()
         prelogin['Version'] = b"\x08\x00\x01\x55\x00\x00"
-        #prelogin['Encryption'] = TDS_ENCRYPT_NOT_SUP
-        prelogin['Encryption'] = TDS_ENCRYPT_OFF
+        prelogin['Encryption'] = TDS_ENCRYPT_NOT_SUP
+        #prelogin['Encryption'] = TDS_ENCRYPT_OFF
         prelogin['ThreadID'] = struct.pack('<L',random.randint(0,65535))
         prelogin['Instance'] = b'MSSQLServer\x00'
 
